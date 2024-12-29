@@ -7,6 +7,7 @@
 sudo(root帳號裝)
 ```text
 apt install sudo
+```
 nginx
 ```text
 sudo apt install nginx
