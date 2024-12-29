@@ -12,6 +12,29 @@ detect_os() {
     fi
 }
 
+# 選擇配置版本
+select_version() {
+    echo "請選擇要安裝的版本："
+    echo "1) 預設版本"
+    echo "2) CloudFlare 版本"
+    read -p "請輸入選項 (1-2): " version_choice
+    
+    case $version_choice in
+        1)
+            CONFIG_URL="https://raw.githubusercontent.com/gebu8f/SH/refs/heads/main/default_system"
+            echo "選擇預設版本"
+            ;;
+        2)
+            CONFIG_URL="https://raw.githubusercontent.com/gebu8f/SH/refs/heads/main/default_cf"
+            echo "選擇 CloudFlare 版本"
+            ;;
+        *)
+            echo "無效的選擇，使用預設版本"
+            CONFIG_URL="https://raw.githubusercontent.com/gebu8f/SH/refs/heads/main/default_system"
+            ;;
+    esac
+}
+
 # 建立必要目錄
 create_directories() {
     sudo mkdir -p /home/web/
@@ -29,7 +52,7 @@ generate_ssl_cert() {
 
 # 下載nginx配置文件
 download_config() {
-    sudo wget -O default https://raw.githubusercontent.com/gebu8f/SH/refs/heads/main/default_system
+    sudo wget -O default $CONFIG_URL
     sudo mv default /etc/nginx/sites-available/
 }
 
@@ -69,7 +92,9 @@ alpine_install() {
 main() {
     detect_os
     echo "檢測到的操作系統: $OS"
-
+    
+    select_version
+    
     case "$OS" in
         *Ubuntu*|*Debian*)
             echo "執行 Ubuntu/Debian 安裝流程..."
@@ -89,7 +114,7 @@ main() {
             ;;
     esac
 
-    echo "Nginx 安裝加配置完成！"
+    echo "Nginx 安裝完成！"
 }
 
 main
