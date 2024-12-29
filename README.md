@@ -3,6 +3,6 @@
 2. 使用系統的nginx，**不是Docker版本**
 工具：
 nginx
-`` text
+```text
 sudo apt install nginx
-``
+```
