@@ -8,15 +8,7 @@ sudo(root帳號裝)
 ```text
 apt install sudo
 ```
-nginx
-```text
-sudo apt install nginx
-```
 sh腳本
 ```text
 bash <(curl -sL https://raw.githubusercontent.com/gebu8f/SH/refs/heads/main/nginx.sh )
-```
-sh腳本CloudFlare版本
-```text
-bash <(curl -sL https://raw.githubusercontent.com/gebu8f/SH/refs/heads/main/nginx_cf.sh )
 ```
