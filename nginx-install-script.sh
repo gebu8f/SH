@@ -30,7 +30,7 @@ generate_ssl_cert() {
 # 下載nginx配置文件
 download_config() {
     sudo wget -O default https://raw.githubusercontent.com/gebu8f/SH/refs/heads/main/default_system
-    sudo mv default /etc/nginx/sites-available/default 2>/dev/null || sudo mv default /etc/nginx/conf.d/default.conf
+    sudo mv default /etc/nginx/sites-available/
 }
 
 # Ubuntu/Debian 安裝
