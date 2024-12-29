@@ -1,3 +1,5 @@
+sudo apt install nginx -y
+sudo apt install wget -y
 sudo mkdir /home/web/
 sudo mkdir /home/web/cert
 sudo apt install openssl -y
