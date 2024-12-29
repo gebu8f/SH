@@ -1,7 +1,12 @@
+# 這個只支援Ubuntu Debian
+# This only supports Ubuntu Debian
 ### 使用nginx時，要注意幾點：
-1. 使用root
+1. 可以使用普通帳號，但需要裝sudo；可使用root
 2. 使用系統的nginx，**不是Docker版本**
 ### 工具：
+sudo(root帳號裝)
+```text
+apt install sudo
 nginx
 ```text
 sudo apt install nginx
