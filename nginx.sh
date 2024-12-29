@@ -84,13 +84,13 @@ centos_install() {
 
 # Alpine 安裝
 alpine_install() {
-    sudo apk update
-    sudo apk add nginx wget openssl
+    apk update
+    apk add nginx wget openssl
     create_directories
     generate_ssl_cert
-    sudo mkdir -p /etc/nginx/conf.d
+    mkdir -p /etc/nginx/conf.d
     download_config
-    sudo rc-service nginx restart
+    rc-service nginx restart
 }
 
 # 主程序
