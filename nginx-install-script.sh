@@ -89,7 +89,7 @@ main() {
             ;;
     esac
 
-    echo "Nginx 安裝完成！"
+    echo "Nginx 安裝加配置完成！"
 }
 
 main
